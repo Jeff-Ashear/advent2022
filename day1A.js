@@ -2255,12 +2255,27 @@ function snackHunter(str) {
     let num = 0
     let sum = 0
     let arr = []
+    let mostCalories = 0
 
-    for (i = 0; i < str.length; i++) {
-        num = parseInt(str.split(/\r?\n|\r|\n/g))
-
-    }
-        //add that to a new variable
+    
+        // num = parseInt(str.split(/\r?\n|\r|\n/g))
+        
+         arr = str.split('\n')
+       
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] != '') {
+                    sum += arr[i] 
+                } else if (arr[i] === '') {
+                    if (sum > mostCalories) {
+                        mostCalories = sum
+                        sum = 0
+                    }
+                    sum = 0
+                }
+            }
+            return mostCalories
+       
+            //add that to a new variable
         //coninue until two conssecutive linbreaks occur
             //then push the total into an array.
         //continue until the string's end is reached.
