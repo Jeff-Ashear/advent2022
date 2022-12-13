@@ -2261,16 +2261,18 @@ function snackHunter(str) {
         // num = parseInt(str.split(/\r?\n|\r|\n/g))
         
          arr = str.split('\n')
-       
+        // console.log(arr) 
+
             for (i = 0; i < arr.length; i++) {
-                if (arr[i] != '') {
-                    sum += arr[i] 
-                } else if (arr[i] === '') {
+                if (arr[i] === '') {
+                    console.log('boop: ' + sum)
                     if (sum > mostCalories) {
                         mostCalories = sum
-                        sum = 0
                     }
-                    sum = 0
+                    sum = 0                   
+                    // sum += arr[i] 
+                } else  {
+                    sum += parseInt(arr[i])
                 }
             }
             return mostCalories
