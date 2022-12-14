@@ -2255,21 +2255,28 @@ function snackHunter(str) {
     let sum = 0
     let arr = []
     let mostCalories = 0
+    let secondMost = 0
+    let thirdMost = 0
 
     arr = str.split('\n')
 
     for (i = 0; i < arr.length; i++) {
-        if (arr[i] === '') {
-            console.log('boop: ' + sum)
+        if (arr[i] === '' || i === arr.length) {
             if (sum > mostCalories) {
+                thirdMost = secondMost
+                console.log("3rd:", thirdMost)
+                secondMost = mostCalories
+                console.log("2nd: ", secondMost)
                 mostCalories = sum
+                console.log("Most:", mostCalories)
             }
+            
             sum = 0
         } else {
             sum += parseInt(arr[i])
         }
     }
-    return mostCalories
+    return mostCalories + secondMost + thirdMost
 }
 
 console.log(snackHunter(input)) 
