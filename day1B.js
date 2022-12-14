@@ -2251,12 +2251,10 @@ let input = `5800
 `
 function snackHunter(str) {
     // split string at single linebreaks, convert to number and store in a variable
+
     let sum = 0
     let arr = []
     let mostCalories = 0
-
-
-    // num = parseInt(str.split(/\r?\n|\r|\n/g))
 
     arr = str.split('\n')
 
@@ -2274,4 +2272,4 @@ function snackHunter(str) {
     return mostCalories
 }
 
-console.log(snackHunter(input))
+console.log(snackHunter(input)) 
