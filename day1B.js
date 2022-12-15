@@ -2262,7 +2262,7 @@ function snackHunter(str) {
 
     for (i = 0; i < arr.length; i++) {
         if (arr[i] === '' || i === arr.length) {
-            if (sum > mostCalories) {
+            if (sum >= mostCalories) {
                 thirdMost = secondMost
                 console.log("3rd:", thirdMost)
                 secondMost = mostCalories
@@ -2273,7 +2273,7 @@ function snackHunter(str) {
             
             sum = 0
         } else {
-            sum += parseInt(arr[i])
+            sum = sum + parseInt(arr[i])
         }
     }
     return mostCalories + secondMost + thirdMost
