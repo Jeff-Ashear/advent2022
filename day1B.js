@@ -2252,28 +2252,30 @@ let input = `5800
 function snackHunter(str) {
     // split string at single linebreaks, convert to number and store in a variable
 
-    let sum = 0
     let arr = []
+    arr = str.split('\n')
+
+    let sum = 0
     let mostCalories = 0
     let secondMost = 0
     let thirdMost = 0
 
-    arr = str.split('\n')
 
     for (i = 0; i < arr.length; i++) {
         if (arr[i] === '' || i === arr.length) {
             if (sum >= mostCalories) {
                 thirdMost = secondMost
-                console.log("3rd:", thirdMost)
                 secondMost = mostCalories
-                console.log("2nd: ", secondMost)
                 mostCalories = sum
-                console.log("Most:", mostCalories)
+            } else if (sum >= secondMost) {
+                thirdMost = secondMost
+                secondMost = sum
+            } else if (sum >= thirdMost) {
+                thirdMost = sum
             }
-            
             sum = 0
         } else {
-            sum = sum + parseInt(arr[i])
+            sum += parseInt(arr[i])
         }
     }
     return mostCalories + secondMost + thirdMost
