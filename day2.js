@@ -2503,13 +2503,16 @@ let guide =  []
 guide = data.split('\n')
 
 function scoreRPS(arr) {
-    let col1 = ''
-    let col2 = '' 
+    let opponenet = ''
+    let me = '' 
 
     for (let i = 0; i < arr.length; i++) {
-        col1 = arr[i].charAt(0)
-        col2 = arr[i].charAt(2)
+        opponenet = arr[i].charAt(0)
+        me = arr[i].charAt(2)
 
+        switch(game) {
+            case 
+        }
 
     }
 
