@@ -2510,8 +2510,10 @@ function scoreRPS(arr) {
         opponenet = arr[i].charAt(0)
         me = arr[i].charAt(2)
 
-        switch(game) {
-            case 
+        switch(opponenet) {
+            case "A" {
+                
+            } 
         }
 
     }
