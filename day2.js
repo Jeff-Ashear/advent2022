@@ -2505,19 +2505,64 @@ guide = data.split('\n')
 function scoreRPS(arr) {
     let opponenet = ''
     let me = '' 
+    let score = 0
+    let totalPoints = 0
 
     for (let i = 0; i < arr.length; i++) {
         opponenet = arr[i].charAt(0)
         me = arr[i].charAt(2)
 
-        switch(opponenet) {
-            case "A" {
-                
-            } 
+        switch(me) {
+            case "X": 
+                score += 1
+                break;
+            case "Y":
+                score += 2
+                break;
+            case "Z":
+                score += 3
         }
 
-    }
+        switch(opponenet) {
+            case "A":
+               if (me === "X") {
+                score += 3
+               } 
+               if (me === "Y") {
+                score += 6
+               }
+               if (me === "Z") {
+                score += 0
+               }
+               break;
+            case "B":
+                if (me === "X") {
+                    score += 0
+                   } 
+                   if (me === "Y") {
+                    score += 3
+                   }
+                   if (me === "Z") {
+                    score += 6
+                   }
+                   break;
+            case "C":
+                if (me === "X") {
+                    score += 6
+                   } 
+                   if (me === "Y") {
+                    score += 0
+                   }
+                   if (me === "Z") {
+                    score += 3
+                   }
+                   break;
+        }
 
+        totalPoints += score
+        
+    }
+    return(totalPoints)
 }
 
 console.log(scoreRPS(guide))
