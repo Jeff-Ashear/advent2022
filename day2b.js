@@ -2512,27 +2512,20 @@ function scoreRPS(arr) {
         opponenet = arr[i].charAt(0)
         me = arr[i].charAt(2)
 
-        switch(me) {
-            case "X": 
-                score += 1
-                break;
-            case "Y":
-                score += 2
-                break;
-            case "Z":
-                score += 3
-        }
-
         switch(opponenet) {
             case "A":
                if (me === "X") {
+                // must lose, zero for the round
+                // must play scissors for 3 points
                 score += 3
                } 
                if (me === "Y") {
-                score += 6
+                // must draw (for 3 points) by playing rock (for 1 point) for 4 points
+                score += 4
                }
                if (me === "Z") {
-                score += 0
+                // must win (for 6 points) by playing paper (for 2 points) for 8 points
+                score += 8
                }
                break;
             case "B":
@@ -2557,6 +2550,17 @@ function scoreRPS(arr) {
                     score += 3
                    }
                    break;
+        }
+
+        switch(me) {
+            case "X": 
+                score += 1
+                break;
+            case "Y":
+                score += 2
+                break;
+            case "Z":
+                score += 3
         }
 
         totalPoints += score
