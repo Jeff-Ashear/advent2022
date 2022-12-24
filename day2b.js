@@ -2530,38 +2530,44 @@ function scoreRPS(arr) {
                break;
             case "B":
                 if (me === "X") {
-                    score += 0
+                    // must lose (for 0 points) by playing rock (for 1 point) for 1 point
+                    score += 1
                    } 
                    if (me === "Y") {
-                    score += 3
+                    // must draw (for 3 points) by playing paper (for 2 points) for 5 points
+                    score += 5
                    }
                    if (me === "Z") {
-                    score += 6
+                    // must win (for 6 points) by playing scisors (for 3 points) for 9 points
+                    score += 9
                    }
                    break;
             case "C":
                 if (me === "X") {
-                    score += 6
+                    // must lose (for 0 points) by playing paper (2 points) for 2 points
+                    score += 2
                    } 
                    if (me === "Y") {
-                    score += 0
+                    // must draw (for 3 point) by playing scissors (3 points) for 6 points
+                    score += 6
                    }
                    if (me === "Z") {
+                    // must win (for 6 points) by playing rock (for 1 point) for 7 points
                     score += 3
                    }
                    break;
         }
 
-        switch(me) {
-            case "X": 
-                score += 1
-                break;
-            case "Y":
-                score += 2
-                break;
-            case "Z":
-                score += 3
-        }
+        // switch(me) {
+        //     case "X": 
+        //         score += 1
+        //         break;
+        //     case "Y":
+        //         score += 2
+        //         break;
+        //     case "Z":
+        //         score += 3
+        // }
 
         totalPoints += score
         score = 0
