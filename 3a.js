@@ -311,13 +311,25 @@ function priorities(str) {
     let arr = str.split('\n')
     let sum = 0 
     let compartment1 = ""
+    let char1 = ""
+    let char2 = ""
     let compartment2 = ""
     let recurringItem = ""
     let priorityValue = 0
 
+
+
     for (let i = 0; i < 5; ++i) {
         compartment1 = arr[i].slice(0, arr[i].length / 2)
-        
+        for (let i = 0; i < compartment1.length; ++i) {
+            char1 = compartment1[i]
+            for (let j = 0; j < compartment1.length; ++j) {
+                if (char1 === compartment1[j] && i != j) {
+                    console.log("assign Priority value")
+                }
+            }
+        }
+
         compartment2 = arr[i].slice(arr[i].length / 2, arr[i].length)
 
         console.log(compartment1, compartment2)
