@@ -332,8 +332,13 @@ function priorities(str) {
         }
 
         compartment2 = arr[i].slice(arr[i].length / 2, arr[i].length)
-
-        console.log(compartment1, compartment2)
+        for (let i = 0; i < compartment2.length; ++i) {
+            char2 = compartment2[i]
+            for (let j = 0; j < compartment2.length; ++j) {
+                assignPriority(char2)
+            }
+        }
+        // console.log(compartment1, compartment2)
     }
 
     function assignPriority(char) {
@@ -341,15 +346,16 @@ function priorities(str) {
         if (char === char.toUpperCase()) {
             priorityValue += 26
         }
+        
         priorityValue += char.charCodeAt(0) - 96
         sum += priorityValue
-        console.log(priorityValue, sum)
+        // console.log(priorityValue, sum)
         priorityValue = 0
 
         return sum 
             // now what value to assign? (a-z = 1-26, A-Z = 27-52)
     }
-    
+    return sum
 }
 
 console.log(priorities(input))
