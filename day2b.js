@@ -2553,7 +2553,7 @@ function scoreRPS(arr) {
                    }
                    if (me === "Z") {
                     // must win (for 6 points) by playing rock (for 1 point) for 7 points
-                    score += 3
+                    score += 7
                    }
                    break;
         }

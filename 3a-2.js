@@ -308,54 +308,12 @@ gHVVnBzJcBgVhtZZtgJhpGrGNpvDpddvprNGrlTJ
     // incriment the sum of all priority values
 
 function priorities(str) {
-    let arr = str.split('\n')
-    let sum = 0 
+    let arr = str.split(`\n`)
     let compartment1 = ""
-    let char1 = ""
-    let char2 = ""
     let compartment2 = ""
-    let recurringItem = ""
-    let priorityValue = 0
-
-
-
-    for (let i = 0; i < 5; ++i) {
-        compartment1 = arr[i].slice(0, arr[i].length / 2)
-        for (let i = 0; i < compartment1.length; ++i) {
-            char1 = compartment1[i]
-            for (let j = 0; j < compartment1.length; ++j) {
-                if (char1 === compartment1[j] && i != j) {
-                    // console.log("assign Priority value")
-                    assignPriority(char1)
-                }
-            }
-        }
-
-        compartment2 = arr[i].slice(arr[i].length / 2, arr[i].length)
-        for (let i = 0; i < compartment2.length; ++i) {
-            char2 = compartment2[i]
-            for (let j = 0; j < compartment2.length; ++j) {
-                assignPriority(char2)
-            }
-        }
-        // console.log(compartment1, compartment2)
-    }
-
-    function assignPriority(char) {
-        // is char upper or lower case?
-        if (char === char.toUpperCase()) {
-            priorityValue += 26
-        }
-        
-        priorityValue += char.charCodeAt(0) - 96
-        sum += priorityValue
-        // console.log(priorityValue, sum)
-        priorityValue = 0
-
-        return sum 
-            // now what value to assign? (a-z = 1-26, A-Z = 27-52)
-    }
-    return sum
+    
+    
+    console.log(arr)
 }
 
 console.log(priorities(input))
