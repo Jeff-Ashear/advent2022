@@ -313,6 +313,7 @@ function priorities(str) {
     let compartment2 = ""
     
     
+    
     console.log(arr)
 }
 
