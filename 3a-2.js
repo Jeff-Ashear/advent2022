@@ -308,12 +308,10 @@ gHVVnBzJcBgVhtZZtgJhpGrGNpvDpddvprNGrlTJ
     // incriment the sum of all priority values
 
 function priorities(str) {
-    let arr = str.split('\n')
-    let sum = 0 
+    let arr = str.split(`\n`)
     let compartment1 = ""
-    let char1 = ""
-    let char2 = ""
     let compartment2 = ""
+<<<<<<< HEAD
     let recurringItem = ""
     let priorityValue = 0
 
@@ -357,6 +355,12 @@ function priorities(str) {
             // now what value to assign? (a-z = 1-26, A-Z = 27-52)
     }
     return sum
+=======
+    
+    
+    
+    console.log(arr)
+>>>>>>> 0a68676cf27c0c08368d0e9dc5d440fc8e216189
 }
 
 
