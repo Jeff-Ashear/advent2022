@@ -331,6 +331,7 @@ function priorities(str) {
             }
         }
 
+
         compartment2 = arr[i].slice(arr[i].length / 2, arr[i].length)
         for (let i = 0; i < compartment2.length; ++i) {
             char2 = compartment2[i]
@@ -357,5 +358,6 @@ function priorities(str) {
     }
     return sum
 }
+
 
 console.log(priorities(input))
