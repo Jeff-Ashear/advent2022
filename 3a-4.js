@@ -315,6 +315,11 @@ function priorities(str) {
     let priorityValue = 0
     let sum = 0
 
+
+    for (let i = 0; i < arr.length; ++i) {
+        compartment1 = arr[i].slice(0, arr[i].length / 2)
+        compartment2 = arr[i].slice(arr[i].length / 2, arr[i].length)
+    }
     
 
     
