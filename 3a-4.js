@@ -301,11 +301,11 @@ gHVVnBzJcBgVhtZZtgJhpGrGNpvDpddvprNGrlTJ
 `
 
 // function needs to:
-    // separate input into individual strings
-    // measure the length of each string and divide it into equal halves
-    // scan each half for recurring characters
-    // assign each recurring character a priority value
-    // incriment the sum of all priority values
+// separate input into individual strings
+// measure the length of each string and divide it into equal halves
+// scan each half for recurring characters
+// assign each recurring character a priority value
+// incriment the sum of all priority values
 
 function priorities(str) {
     let arr = str.split(`\n`)
@@ -319,10 +319,19 @@ function priorities(str) {
     for (let i = 0; i < arr.length; ++i) {
         compartment1 = arr[i].slice(0, arr[i].length / 2)
         compartment2 = arr[i].slice(arr[i].length / 2, arr[i].length)
-    }
-    
 
-    
+        for (let i = 0; i < compartment1.length; ++i) {
+            for (let j = 0; j < compartment2.length; ++j) {
+                if (compartment1[i] === compartment2[j]) {
+                    recurringItem = compartment1[i]
+                    console.log(recurringItem, compartment2[j])
+                }
+
+            }
+        }
+    }
+
+
 }
 
 
