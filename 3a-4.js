@@ -324,7 +324,7 @@ function priorities(str) {
             for (let j = 0; j < compartment2.length; ++j) {
                 if (compartment1[i] === compartment2[j]) {
                     recurringItem = compartment1[i]
-                    console.log(recurringItem, compartment2[j])
+                    console.log("first thing", recurringItem, "second thing:", compartment2[j])
                 }
 
             }
