@@ -304,16 +304,51 @@ gHVVnBzJcBgVhtZZtgJhpGrGNpvDpddvprNGrlTJ
 function detectDupes(input) {
     // divide the input into individual strings at the line breaks and store them in an array 
     let arr = input.split(`\n`)
+
+    // store the priority value of each item and their sum
+    let priority = 0
+    let sum = 0
     
     // divide each string in half
     let compartment1 = ""
     let compartment2 = ""
+    // store the character for case conversion
+    let item = ""
 
     for (let i = 0; i < arr.length; ++i) {
         compartment1 = arr[i].slice(0, arr[i].length / 2)
         compartment2 = arr[i].slice(arr[i].length / 2, arr[i].length)
-        console.log(compartment1, compartment2)
+
+        // console.log(arr[i])
+        // console.log(compartment1)
+        // console.log(compartment2)
+        // console.log('**********************************')
+
+        // scan for identical items in each compartment, case-sensitive
+        for (let i = 0; i < compartment1.length; ++i) {          
+            for (let j = 0; j < compartment2.length; ++j) {
+                if (compartment1[i] === compartment2[j]) {
+                    // detect upper or lower case
+                    if (compartment1[i] === compartment1[i].toUpperCase()) {
+                        priority += 26
+                    }
+                    item = compartment1[i].toLowerCase()
+                    // assign a priority value
+                    priority += item.charCodeAt(0) - 96
+                    console.log(compartment1[i], priority)
+                    
+                    // calculate the sum
+                    sum += priority
+                    
+                    //reset the priority for the next item
+                    priority = 0
+                    console.log(compartment1[i], compartment2[j], item, priority, sum)
+                }
+               
+            }
+        }       
     }
+    return sum
 }
 
-detectDupes(input)
+console.log(detectDupes(input))
