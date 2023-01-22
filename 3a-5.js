@@ -299,3 +299,21 @@ TTrNcjGNWDdDPDpPjDPNrbmFPfQSFmfSMCmCfSmSSR
 sshhqshzBVnzHgwCMbCwcfmRFmRMbm
 gHVVnBzJcBgVhtZZtgJhpGrGNpvDpddvprNGrlTJ
 `
+
+
+function detectDupes(input) {
+    // divide the input into individual strings at the line breaks and store them in an array 
+    let arr = input.split(`\n`)
+    
+    // divide each string in half
+    let compartment1 = ""
+    let compartment2 = ""
+
+    for (let i = 0; i < arr.length; ++i) {
+        compartment1 = arr[i].slice(0, arr[i].length / 2)
+        compartment2 = arr[i].slice(arr[i].length / 2, arr[i].length)
+        console.log(compartment1, compartment2)
+    }
+}
+
+detectDupes(input)
